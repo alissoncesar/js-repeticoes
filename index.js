@@ -8,12 +8,14 @@
 // }
 
 
-for(let i = 1; i <= 31; i++){
-    dia.innerHTML += `<option>${i}</option>`
-}
+// for(let i = 1; i <= 31; i++){
+//     dia.innerHTML += `<option>${i}</option>`
+// }
 
-for(let i = 1; i <= 12; i++){
-    mes.innerHTML += `<option>${i}</option>`
+let nomesMeses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+for(let i = 0; i < nomesMeses.length; i++){
+    mes.innerHTML += `<option>${nomesMeses[i]}</option>`
 }
 
 // for(let i = 2025; i >= 1975; i--){
@@ -30,3 +32,26 @@ function verificar(){
     }
     
 }
+
+let selectElement = document.getElementById('mes');
+function definirDia(){
+    if(Number(ano.value) % 4 == 0 && selectElement.value === 'Fevereiro'){
+        for(let i = 1; i <= 29; i++){
+            dia.innerHTML += `<option>${i}</option>`
+        }  
+        }else if(Number(ano.value) % 4 != 0 && selectElement.value === "Fevereiro"){
+            for(let i = 1; i <= 28; i++){
+                dia.innerHTML += `<option>${i}</option>`
+            } 
+        }else if(selectElement.value === "Abril" ||selectElement.value === "Junho" ||selectElement.value === "Setembro" ||selectElement.value === "Novembro"){
+            for(let i = 1; i <= 30; i++){
+                dia.innerHTML += `<option>${i}</option>`
+            } 
+        }else if(selectElement.value === "Janeiro" ||selectElement.value === "Março" ||selectElement.value === "Maio" ||selectElement.value === "Julho"|| selectElement.value === "Agosto" ||selectElement.value === "Outubro" ||selectElement.value === "Dezembro"){
+            for(let i = 1; i <= 31; i++){
+                dia.innerHTML += `<option>${i}</option>`
+            } 
+        } 
+
+    }
+

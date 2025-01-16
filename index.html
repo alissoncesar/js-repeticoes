@@ -14,12 +14,12 @@
         </div>
         <div>
             <label for="mes">Mês</label>
-            <select id="mes" onchange="definirDia()">
+            <select id="mes" onchange="zerarDia();definirDia()">
             </select>
         </div>
         <div>
             <label for="ano">Ano</label>
-            <select id="ano">
+            <select id="ano" onchange="zerarDia();definirDia()">
             </select>
         </div>
         <button onclick="verificar()">Verificar</button>

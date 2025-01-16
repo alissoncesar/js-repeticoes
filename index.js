@@ -12,7 +12,7 @@
 //     dia.innerHTML += `<option>${i}</option>`
 // }
 
-let nomesMeses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+let nomesMeses = ["","Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
 for(let i = 0; i < nomesMeses.length; i++){
     mes.innerHTML += `<option>${nomesMeses[i]}</option>`
@@ -33,7 +33,18 @@ function verificar(){
     
 }
 
+let selectDia = document.getElementById('dia');
 let selectElement = document.getElementById('mes');
+let selectAno = document.getElementById('ano');
+
+
+function zerarDia(){
+    if(selectElement !== "" || selectAno !== ""){
+        selectDia.innerHTML = ""
+    }
+}
+
+
 function definirDia(){
     if(Number(ano.value) % 4 == 0 && selectElement.value === 'Fevereiro'){
         for(let i = 1; i <= 29; i++){
